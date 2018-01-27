@@ -11,11 +11,12 @@ public class District : MonoBehaviour {
 	//
 	[SerializeField] private SpriteRenderer rend;
 	[SerializeField] private TextMesh displayName;
+	[SerializeField] private SpriteRenderer displayIcon;
 	public static uint NUM_DISTRICTS = 0; // incremented when each district is created
 
 	public string districtName;
 	public string description; // a quick description of the district
-	public Texture2D icon = null; // to display in a popup window on hover
+	public Sprite icon = null; // to display in a popup window on hover
 	Texture2D area = null; // a texture defining the location of this district through what's alpha and what's not
 	public double sustain = 0.9; //  (0,1) exponential decay factor. number is how much enthusaism is kept through each tick
 	
@@ -110,5 +111,6 @@ public class District : MonoBehaviour {
 
 	void OnMouseOver() {
 		displayName.text = districtName;
+		displayIcon.sprite = icon;
 	}
 }
