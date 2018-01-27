@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-
+/**
+ people are less likely to be high-enthusaism supporters of those who disagree with them a lot
+ */
 public enum Issues : uint {
 	Environment = 0,
 	Business,
@@ -13,26 +15,15 @@ public enum Issues : uint {
 }
 
 public class Alignment : MonoBehaviour {
-	double[] alignment; // all in the range [-1, 1]. roughly aligns to left-right leaning politics
+	[Range(-1.0f, 1.0f)] public float environment;
+	[Range(-1.0f, 1.0f)] public float business;
+	[Range(-1.0f, 1.0f)] public float guns;
+
 	static Alignment candidate;
 
 	void Awake() {
-		alignment = new double[(uint)Issues.NUM_ISSUES];
 		GameObject player = GameObject.Find("PlayerCharacter");
 		candidate = player.GetComponent<Alignment>();
-	}
-
-	// TODO: expand as issue count goes up
-	void SetAll(double environment, double business, double guns) {
-	}
-
-	void Set(Issues which, double stance) {
-		// NUM_ISSUES only exists as a convenience; not a stance in itself
-		Assert.IsFalse(which == Issues.NUM_ISSUES);
-	}
-
-	void Offset(Issues which, double delta) {
-		
 	}
 
 	// Use this for initialization
@@ -43,5 +34,22 @@ public class Alignment : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	/**
+	 * \return a double in the range [0, 1] showing how responsive this alignment is to the player's policies
+	 * uses euclidean distance, scaled to [0,1]
+	 */
+	static float max_distance = Mathf.Sqrt(4*(int)Issues.NUM_ISSUES);
+	public float AgreesWithPlayerFactor() {
+		return Mathf.Pow(
+			
+			1 - Mathf.Sqrt(
+				Mathf.Pow(environment - candidate.environment, 2) +
+				Mathf.Pow(business - candidate.business, 2) +
+				Mathf.Pow(guns - candidate.guns, 2)
+			) / max_distance
+		
+		, 2);
 	}
 }
