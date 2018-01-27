@@ -63,10 +63,13 @@ public class District : MonoBehaviour {
 		pixels = new Color[area.width * area.height];
 
 		// enthusaism and distribution start at 0 across the board
+		for (int i = 0; i < area.height * area.width; ++i) {
+			pixels[i] = new Color(0,0,0);
+		}
 		enthusaism.SetPixels(pixels);
 		enthusaism.Apply();
 		distribution.SetPixels(pixels);
-		enthusaism.Apply();
+		distribution.Apply();
 
 		// alignment (or rather, agreeability of candidate's position) uses a noise texture
 		for (int r = 0; r < area.height; ++r) {
