@@ -26,16 +26,6 @@ public class Alignment : MonoBehaviour {
 		candidate = player.GetComponent<Alignment>();
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	/**
 	 * \return a double in the range [0, 1] showing how responsive this alignment is to the player's policies
 	 * uses euclidean distance, scaled to [0,1]
