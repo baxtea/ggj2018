@@ -1210,7 +1210,7 @@ MonoBehaviour:
   description: Farming province that is the agricultural lifeblood of Unidia. Kale
     production is the key export, followed by other healthy and nutritious food options.
     Recycling and preserving the environment is held above all else.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4a58cd866eb7e474ea806464e932c07e, type: 3}
   sustain: 0.9
   alignment: {fileID: 861797215}
 --- !u!212 &861797217
