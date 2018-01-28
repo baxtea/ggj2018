@@ -15,7 +15,7 @@ public class Titleswitchscreen : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("loading new scene");
-            SceneManager.LoadScene("Rally Planning", LoadSceneMode.Single);
+            SceneManager.LoadScene("Rally Planning");
         }
     }
    // void OnMouseDown()

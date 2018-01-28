@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Tweeting : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class Tweeting : MonoBehaviour
     public void ChoiceMade(int which)
     {
         Debug.Log("Clicked bubble " + which);
+        StartCoroutine(GoBack());
     }
 
     IEnumerator Event()
@@ -48,6 +49,13 @@ public class Tweeting : MonoBehaviour
         Choice3.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
         options.tweets.RemoveAt(r);//removes tweet so there are no repeats
         Debug.Log(options.tweets.Count);
+        yield return null;
+    }
+    IEnumerator GoBack()
+    {
+        Debug.Log("Going Back");
+        yield return new WaitForSeconds(1);//Pause before showing options    
+        SceneManager.LoadScene("Rally Planning");
         yield return null;
     }
 }
