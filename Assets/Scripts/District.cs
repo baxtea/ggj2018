@@ -87,7 +87,7 @@ public class District : MonoBehaviour {
 		UpdateComposite();
 		NUM_DISTRICTS++;
 		if (NUM_DISTRICTS == 7) {
-			GameObject.Find("Debug").GetComponent<SpriteRenderer>().sprite = Sprite.Create(distribution, new Rect(0, 0, area.width, area.height), new Vector2(0.5f, 0.5f), 100.0f);
+			GameObject.Find("Debug").GetComponent<SpriteRenderer>().sprite = Sprite.Create(align_tex, new Rect(0, 0, area.width, area.height), new Vector2(0.5f, 0.5f), 100.0f);
 		}
 	}
 
@@ -125,19 +125,18 @@ public class District : MonoBehaviour {
 				// this is what i want excitement to do
 				// people nearby get excited no matter what, but a little moreso if they agree with a lot of your politics
 				// careful, excited people who disagree with you are bad
-				float alpha = align_pix[r * area.width + c].a;
+				float alpha = align_pix[r*area.width+c].a;
 				float sample = enth_pix[r*area.width+c].r + (100/d) * align_pix[r*area.width+c].r;
-				enth_pix[r * area.width + c] = new Color(sample, sample, sample, alpha);
+				enth_pix[r*area.width+c] = new Color(sample, sample, sample, alpha);
 
 				// probably what i want distribution to do
 				// inverse square falloff, scaled with how much they agree with your politics
 				sample = dist_pix[r*area.width+c].r + align_pix[r*area.width+c].r * Mathf.Clamp01(2/Mathf.Pow(d/25, 2));
-				dist_pix[r * area.width + c] = new Color(sample, sample, sample, alpha);
+				dist_pix[r*area.width+c] = new Color(sample, sample, sample, alpha);
 
-				//align_pix[r * area.width + c] = new Color(1,1,1,1);
-				//dist_pix[r * area.width + c] += align_pix[r * area.width + c] * NextFloat(rand);// * 1/Mathf.Pow(, 2);
-
-				// now send out a 
+				// alter alignment of people really nearby (you convinced these people, i guess)
+				sample = align_pix[r*area.width + c].r + 1/d;
+				align_pix[r*area.width+c] = new Color(sample, sample, sample, alpha);
 			}
 		}
 		enthusaism.SetPixels(enth_pix);

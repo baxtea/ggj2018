@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 /**
  people are less likely to be high-enthusaism supporters of those who disagree with them a lot
  */
-public enum Issues : uint {
+public enum Issue : uint {
 	Environment = 0,
 	Business,
 	Guns,
@@ -38,7 +38,7 @@ public class Alignment : MonoBehaviour {
 	 * \return a double in the range [0, 1] showing how responsive this alignment is to the player's policies
 	 * uses euclidean distance, scaled to [0,1]
 	 */
-	static float max_distance = Mathf.Sqrt(4*(int)Issues.NUM_ISSUES);
+	static float max_distance = Mathf.Sqrt(4*(int)Issue.NUM_ISSUES);
 	public float AgreesWithPlayerFactor() {
 		return Mathf.Pow(
 			
