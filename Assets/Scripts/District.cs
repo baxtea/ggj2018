@@ -23,7 +23,7 @@ public class District : MonoBehaviour {
 	public double sustain = 0.9; //  (0,1) exponential decay factor. number is how much enthusaism is kept through each tick
 
 
-	Vector3 capital_loc;
+	Capital capital;
 	public GameObject flag;
 	
 	// not sure if this field is mutable or not
@@ -50,7 +50,7 @@ public class District : MonoBehaviour {
 
 	void Awake() {
 		area = rend.sprite.texture;
-		capital_loc = gameObject.GetComponentInChildren<Capital>().transform.position;
+		capital = gameObject.GetComponentInChildren<Capital>();
 		//flag = GameObject.Find("flag");
 	}
 
@@ -127,11 +127,15 @@ public class District : MonoBehaviour {
 	}
 
 	void OnMouseOver() {
-		flag.transform.position = capital_loc;
+		flag.transform.position = capital.transform.position;
 
 		displayName.text = districtName;
 		displayIcon.sprite = icon;
 		displayDesc.UnwrappedText = description;
 		displayDesc.NeedsLayout = true;
+	}
+
+	void OnMouseDown() {
+		Rally((int)capital.texture_loc.x, (int)capital.texture_loc.y);
 	}
 }
