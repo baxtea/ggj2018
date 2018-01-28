@@ -89,7 +89,7 @@ public class District : MonoBehaviour {
 	}
 	
 	// ideally i can show like a "pulse" but i'm not very optimistic
-	/*void Rally (int x, int y) {
+	void Rally (int x, int y) {
 
 		Color[] align_pix = align_tex.GetPixels();
 		Color[] dist_pix = distribution.GetPixels();
@@ -104,7 +104,7 @@ public class District : MonoBehaviour {
 				// now send out a 
 			}
 		}
-	}*/
+	}
 
 	void UpdateComposite() {
 
