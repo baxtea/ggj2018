@@ -20,28 +20,9 @@ public class Tweeting : MonoBehaviour
         StartCoroutine(Event());
         
     }
-    void Choose()
+    public void ChoiceMade(int which)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.transform.position, Input.mousePosition);
-
-        if (hit != false && hit.collider != null)
-        {
-            if (hit.collider.tag == "Choice1")
-            {
-                Debug.Log("This is choice 1");
-            }
-
-
-            else if (hit.collider.tag == "Choice2")
-            {
-                Debug.Log("This is choice 2");
-            }
-            else if (hit.collider.tag == "Choice3")
-            {
-                Debug.Log("This is choice 3");
-            }
-        }
+        Debug.Log("Clicked bubble " + which);
     }
     IEnumerator Event()
     {
@@ -64,22 +45,5 @@ public class Tweeting : MonoBehaviour
         TweetList.tweetsList.tweets.RemoveAt(r);
         Debug.Log(TweetList.tweetsList.tweets.Count);
         yield return null;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Choose();
-            Debug.Log("mouse click");
-        }
-
-
-
-
-
-
     }
 }
