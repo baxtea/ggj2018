@@ -2745,7 +2745,7 @@ MonoBehaviour:
   description: Blazing the trail towards gender equality, Valkyrias has been fighting
     for equal rights between men and women since its founding. LGBTQ+ rights are protected
     and expression of gender and sexuality is encouraged.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ac484d322aedc7c46a3cf90742f5dae6, type: 3}
   sustain: 0.9
   flag: {fileID: 14872954}
   alignment: {fileID: 1996072711}
