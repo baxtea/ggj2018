@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 public class Titleswitchscreen : MonoBehaviour {
-
+    public GameObject ggj;
 	// Use this for initialization
 	void Start () {
         Debug.Log("Running");
@@ -15,12 +15,19 @@ public class Titleswitchscreen : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("loading new scene");
-            SceneManager.LoadScene("Rally Planning");
-        }
+            Instantiate(ggj);
+            StartCoroutine(GoBack());        }
     }
-   // void OnMouseDown()
+    IEnumerator GoBack()
+    {
+        Debug.Log("Going Back");
+        yield return new WaitForSeconds(1);//Pause before showing options    
+        SceneManager.LoadScene("Rally Planning");
+        yield return null;
+    }
+    // void OnMouseDown()
     //{
-       // Debug.Log("loading new scene");
-        //SceneManager.LoadScene("Rally Planning", LoadSceneMode.Single);
+    // Debug.Log("loading new scene");
+    //SceneManager.LoadScene("Rally Planning", LoadSceneMode.Single);
     //}
 }
