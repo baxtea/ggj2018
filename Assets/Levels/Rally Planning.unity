@@ -2284,6 +2284,7 @@ GameObject:
   - component: {fileID: 1848249483}
   - component: {fileID: 1848249484}
   - component: {fileID: 1848249482}
+  - component: {fileID: 1848249485}
   m_Layer: 0
   m_Name: Persistent
   m_TagString: Untagged
@@ -2336,6 +2337,17 @@ MonoBehaviour:
   align_tex: {fileID: 0}
   enthusaism: {fileID: 0}
   distribution: {fileID: 0}
+--- !u!114 &1848249485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848249481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f511dd51c2f60e940bef9febac6436e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1848663503
 GameObject:
   m_ObjectHideFlags: 0

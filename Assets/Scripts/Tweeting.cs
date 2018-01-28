@@ -19,7 +19,7 @@ public class Tweeting : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        options = new TweetList();
+        options = GameObject.Find("Persistent").GetComponent<TweetList>();
         StartCoroutine(Event());
         
     }

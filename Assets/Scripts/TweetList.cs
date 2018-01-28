@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class TweetList {
+public class TweetList : MonoBehaviour {
     public List<List<string>> tweets = new List <List<string>>();
     string firstname; //will be the name the player enters
 
     // Use this for initialization
-    public TweetList() {
+    void Awake() {
         List<string> tweet1 = new List<string>() { "Kale farms in Kalros have been ravaged by a flood.", "Kale is a vital plant for the balance of the ecosystem. We must work to create as many sustainable farms as possible to replace those lost", "What / Who cares ? Kale is stupid anyways!It tastes supper GROSS. #NoVeggies", "Kale production is the backbone of our farms. Get out people back to work! Fix those farms! #ExportEconomy" };
         tweets.Add(tweet1);
         List<string> tweet2 = new List<string>() { "1 in 5 people in Unidia don’t have health insurance ", "We must invest more in medical care for everyone so we can protect our citizens in the future #HealthCareReform", "But that means the other 4 have it? And I am one of those 4. The 20% can suck it. #TakeThatSickness", "People are responsible for their own health insurance. If they don’t have it, they are accepting the risk" };
