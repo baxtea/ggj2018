@@ -48,13 +48,13 @@ public class Transmission : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void TweetTick(Issue issue, float stance) {
+		for (int r = 0; r < area.height; ++r) {
+			for (int c = 0; c < area.width; ++c) {
+
+
+				//pixels[r * area.width + c] = new Color(sample, sample, sample, 0);
+			}
+		}
 	}
 }
