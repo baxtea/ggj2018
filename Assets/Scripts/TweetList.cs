@@ -11,8 +11,9 @@ public class TweetList : MonoBehaviour {
     void Awake() {
         List<string> tweet1 = new List<string>() { "Kale farms in Kalros have been ravaged by a flood.", "Kale is a vital plant for the balance of the ecosystem. We must work to create as many sustainable farms as possible to replace those lost", "What / Who cares ? Kale is stupid anyways!It tastes supper GROSS. #NoVeggies", "Kale production is the backbone of our farms. Get out people back to work! Fix those farms! #ExportEconomy" };
         List<Statement> w1 = new List<Statement>() { new Statement {issue = Issue.Environment, stance = -0.6f}, new Statement {issue = Issue.Environment, stance = 1.0f},  new Statement {issue = Issue.Business, stance = 0.3f} };
-        
         tweets.Add(tweet1);
+        weights.Add(w1);
+
         List<string> tweet2 = new List<string>() { "1 in 5 people in Unidia don’t have health insurance ", "We must invest more in medical care for everyone so we can protect our citizens in the future #HealthCareReform", "But that means the other 4 have it? And I am one of those 4. The 20% can suck it. #TakeThatSickness", "People are responsible for their own health insurance. If they don’t have it, they are accepting the risk" };
         //if they click on the second choice here, its supposed to do the Oregon Trail easter egg
         tweets.Add(tweet2);
