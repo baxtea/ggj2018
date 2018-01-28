@@ -12,6 +12,7 @@ public class District : MonoBehaviour {
 	[SerializeField] private SpriteRenderer rend;
 	[SerializeField] private TextMesh displayName;
 	[SerializeField] private SpriteRenderer displayIcon;
+	[SerializeField] private SmartTextMesh displayDesc;
 	public static uint NUM_DISTRICTS = 0; // incremented when each district is created
 
 	public string districtName;
@@ -112,5 +113,7 @@ public class District : MonoBehaviour {
 	void OnMouseOver() {
 		displayName.text = districtName;
 		displayIcon.sprite = icon;
+		displayDesc.UnwrappedText = description;
+		displayDesc.NeedsLayout = true;
 	}
 }

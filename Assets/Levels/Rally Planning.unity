@@ -113,6 +113,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14872954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 14872956}
+  - component: {fileID: 14872955}
+  m_Layer: 2
+  m_Name: flag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &14872955
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14872954}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c58dabfb8891e4c4595f1ac6f195fa2e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.97, y: 1.72}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &14872956
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14872954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.57, y: 1.44, z: -0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &32346028
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,8 +246,11 @@ MonoBehaviour:
   rend: {fileID: 32346032}
   displayName: {fileID: 1133765073}
   displayIcon: {fileID: 129920232}
+  displayDesc: {fileID: 1912435621}
   districtName: Bellicity
-  description: 
+  description: "The nation\u2019s insular capital, they all talk about the good old
+    days but can\u2019t agree on when those were. There were plans for a border wall,
+    but the lowest-bid contractors built it vertically instead of horizontally. "
   icon: {fileID: 0}
   sustain: 0.9
   alignment: {fileID: 32346030}
@@ -368,6 +444,7 @@ MonoBehaviour:
   rend: {fileID: 62543116}
   displayName: {fileID: 1133765073}
   displayIcon: {fileID: 129920232}
+  displayDesc: {fileID: 1912435621}
   districtName: Pioucity
   description: The holy land of the meat faith, followers believe in enlightenment
     through diabetes. Eating vegetables is a cardinal sin, and your closeness to the
@@ -521,13 +598,14 @@ PolygonCollider2D:
 --- !u!1 &129920230
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 1241911252848486, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 129920231}
   - component: {fileID: 129920232}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Display icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,12 +615,13 @@ GameObject:
 --- !u!4 &129920231
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4481033230474202, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
   m_GameObject: {fileID: 129920230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9809, y: 2.8544, z: -0.05}
-  m_LocalScale: {x: 0.29033276, y: 0.29050365, z: 1}
+  m_LocalPosition: {x: 5.9809, y: 2.855, z: -0.05}
+  m_LocalScale: {x: 0.29033276, y: 0.291, z: 1}
   m_Children: []
   m_Father: {fileID: 1982843197}
   m_RootOrder: 1
@@ -550,8 +629,9 @@ Transform:
 --- !u!212 &129920232
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 212122041243752468, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
   m_GameObject: {fileID: 129920230}
   m_Enabled: 1
   m_CastShadows: 0
@@ -651,9 +731,12 @@ MonoBehaviour:
   rend: {fileID: 554686208}
   displayName: {fileID: 1133765073}
   displayIcon: {fileID: 129920232}
+  displayDesc: {fileID: 1912435621}
   districtName: Fjord
-  description: 
-  icon: {fileID: 0}
+  description: A socialist state where communal councils determine the usage of materials
+    and everyone plays an equally important role in the local government. Proud founder
+    and reigning champion of the competitive DIY furniture assembly league.
+  icon: {fileID: 21300000, guid: 2e7d929cfa63b5b4f9e6d3c1347e5340, type: 3}
   sustain: 0.9
   alignment: {fileID: 554686206}
 --- !u!212 &554686208
@@ -927,10 +1010,11 @@ MonoBehaviour:
   rend: {fileID: 721203927}
   displayName: {fileID: 1133765073}
   displayIcon: {fileID: 129920232}
-  districtName: Cannibisia
+  displayDesc: {fileID: 1912435621}
+  districtName: Cannabisia
   description: Effectively a hippie commune, yet one of the the top money making provinces
     in the nation. Everyone works together to maintain a steady flow of ganja, both
-    for the consumption of the locals and for export across the globe.
+    for the locals and for export across the globe.
   icon: {fileID: 21300000, guid: d895727e4910a0944a294fdf570e84f8, type: 3}
   sustain: 0.9
   alignment: {fileID: 721203925}
@@ -1121,8 +1205,11 @@ MonoBehaviour:
   rend: {fileID: 861797217}
   displayName: {fileID: 1133765073}
   displayIcon: {fileID: 129920232}
+  displayDesc: {fileID: 1912435621}
   districtName: Kalros
-  description: 
+  description: Farming province that is the agricultural lifeblood of Unidia. Kale
+    production is the key export, followed by other healthy and nutritious food options.
+    Recycling and preserving the environment is held above all else.
   icon: {fileID: 0}
   sustain: 0.9
   alignment: {fileID: 861797215}
@@ -1309,81 +1396,95 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1133765069
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1982843197}
-    m_Modifications:
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
-        type: 2}
-      propertyPath: m_Text
-      value: District
-      objectReference: {fileID: 0}
-    - target: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
-        type: 2}
-      propertyPath: m_Anchor
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
-        type: 2}
-      propertyPath: m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293603593108180, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1293603593108180, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-      propertyPath: m_Name
-      value: District name
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1133765070 stripped
+--- !u!4 &1133765070
 Transform:
-  m_PrefabParentObject: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4129339632719820, guid: 1a24b495960385d4cb351bd3a839b55c,
     type: 2}
-  m_PrefabInternal: {fileID: 1133765069}
---- !u!102 &1133765073 stripped
+  m_PrefabInternal: {fileID: 1319468946}
+  m_GameObject: {fileID: 1133765071}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.79, y: 1.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1982843197}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1133765071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1369997128487196, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1133765070}
+  - component: {fileID: 1133765074}
+  - component: {fileID: 1133765073}
+  m_Layer: 5
+  m_Name: District name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &1133765073
 TextMesh:
-  m_PrefabParentObject: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 102887060669682866, guid: 1a24b495960385d4cb351bd3a839b55c,
     type: 2}
-  m_PrefabInternal: {fileID: 1133765069}
+  m_PrefabInternal: {fileID: 1319468946}
+  m_GameObject: {fileID: 1133765071}
+  m_Text: District
+  m_OffsetZ: -0.1
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 9ebb6ca5ee4094addac513cf8528f1e1, type: 2}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4287927444
+--- !u!23 &1133765074
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 23159169255081856, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
+  m_GameObject: {fileID: 1133765071}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: a8a2064660ecc42fab77221fa24060bd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1209288371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1566,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1319468946
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 941666678}
+    m_Modifications:
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1345226892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,9 +1668,12 @@ MonoBehaviour:
   rend: {fileID: 1345226896}
   displayName: {fileID: 1133765073}
   displayIcon: {fileID: 129920232}
-  districtName: 
-  description: 
-  icon: {fileID: 0}
+  displayDesc: {fileID: 1912435621}
+  districtName: Opulenta
+  description: "Capitalism incarnate, 99% of wealth is held by the 1% of the 1%, and
+    everyone else didn\u2019t try hard enough. Corporate espionage is commonplace,
+    and competition can be literally cut-throat."
+  icon: {fileID: 21300000, guid: 949a3e803acbd2740b9496e4e6747ad9, type: 3}
   sustain: 0.9
   alignment: {fileID: 1345226894}
 --- !u!212 &1345226896
@@ -1750,6 +1896,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1663665813}
   - component: {fileID: 1663665814}
+  - component: {fileID: 1663665815}
+  - component: {fileID: 1663665816}
   m_Layer: 0
   m_Name: Ocean
   m_TagString: Untagged
@@ -1814,6 +1962,43 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &1663665815
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1663665812}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.2, y: 10.8}
+  m_EdgeRadius: 0
+--- !u!114 &1663665816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1663665812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28bd8d802998dc49b82c6bc5333a61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  details: {fileID: 1982843196}
 --- !u!1 &1848249481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,11 +2042,118 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1912435617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1927192858594132, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1912435618}
+  - component: {fileID: 1912435620}
+  - component: {fileID: 1912435619}
+  - component: {fileID: 1912435621}
+  m_Layer: 5
+  m_Name: Description
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1912435618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4736133212292288, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
+  m_GameObject: {fileID: 1912435617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.86, y: 0.59, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1982843197}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!102 &1912435619
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 102541876982474222, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
+  m_GameObject: {fileID: 1912435617}
+  m_Text: Description
+  m_OffsetZ: 0
+  m_CharacterSize: 1.15
+  m_LineSpacing: 0.55
+  m_Anchor: 0
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: 29821db8324231f4481e730bf6288b9c, type: 2}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &1912435620
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 23707142621957810, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
+  m_GameObject: {fileID: 1912435617}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: c81f8d7093fca4469b1d13a985e9ae72, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1912435621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114691026516505774, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
+  m_GameObject: {fileID: 1912435617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cb26973c18bd140afd146b7ae57f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnwrappedText: 
+  MaxWidth: 3.15
+  NeedsLayout: 1
+  ConvertNewLines: 0
 --- !u!1 &1982843196
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 1904648638216476, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1982843197}
@@ -1876,8 +2168,9 @@ GameObject:
 --- !u!4 &1982843197
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4870292066036614, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
   m_GameObject: {fileID: 1982843196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.2, y: -1.33, z: 0}
@@ -1885,14 +2178,16 @@ Transform:
   m_Children:
   - {fileID: 1133765070}
   - {fileID: 129920231}
+  - {fileID: 1912435618}
   m_Father: {fileID: 941666678}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1982843198
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 212299033178624242, guid: 1a24b495960385d4cb351bd3a839b55c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1319468946}
   m_GameObject: {fileID: 1982843196}
   m_Enabled: 1
   m_CastShadows: 0
@@ -2022,8 +2317,11 @@ MonoBehaviour:
   rend: {fileID: 1996072709}
   displayName: {fileID: 1133765073}
   displayIcon: {fileID: 129920232}
+  displayDesc: {fileID: 1912435621}
   districtName: Valkyrias
-  description: 
+  description: Blazing the trail towards gender equality, Valkyrias has been fighting
+    for equal rights between men and women since its founding. LGBTQ+ rights are protected
+    and expression of gender and sexuality is encouraged.
   icon: {fileID: 0}
   sustain: 0.9
   alignment: {fileID: 1996072711}
