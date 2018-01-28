@@ -21,7 +21,7 @@ public class Transmission : MonoBehaviour {
 		
 		Color[] pixels = new Color[area.width * area.height];
 		for (int i = 0; i < area.height * area.width; ++i) {
-			pixels[i] = new Color(0,0,0, 0);
+			pixels[i] = new Color(0,0,0,0);
 		}
 		enthusaism.SetPixels(pixels);
 		enthusaism.Apply();
