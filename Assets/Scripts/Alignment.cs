@@ -18,6 +18,11 @@ public enum Issue : uint {
 	NUM_ISSUES
 }
 
+public struct Statement {
+	public Issue issue; // chosen from the enum above
+	public float stance; // in the range [0,1]
+}
+
 public class Alignment : MonoBehaviour {
 	[Range(-1.0f, 1.0f)] public float environment;
 	[Range(-1.0f, 1.0f)] public float business;
