@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Transmission : MonoBehaviour {	
 	Texture2D align_tex = null; // 
-	Texture2D enthusaism; // monochrome texture representing how excited **the people who support you** are
+	public Texture2D enthusaism; // monochrome texture representing how excited **the people who support you** are
 	// does a high enough enthusaism have benefits like spreading to other nearby people? TODO: test
 	// is a blob of high enough enthusaism self-sustaining by mutual excitement?
-	Texture2D distribution; // monochrome texture representing what percentage of people in a given area support you. try and black this out.
+	public Texture2D distribution; // monochrome texture representing what percentage of people in a given area support you. try and black this out.
 
 	// only used to reference texture. don't actually care about the contents
 	Texture2D area;
