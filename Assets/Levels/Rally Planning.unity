@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14872956}
   - component: {fileID: 14872955}
+  - component: {fileID: 14872957}
   m_Layer: 2
   m_Name: flag
   m_TagString: Untagged
@@ -179,13 +180,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 14872954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.57, y: 1.44, z: -0.03}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.09, y: 0.02, z: 0.020000001}
+  m_LocalScale: {x: 0.7610049, y: 0.76100504, z: 0.76100504}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 941666678}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14872957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14872954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134628b22c1002a4bac4e057c2837597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &32346028
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,9 +241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edccbcba10509a48a106797cc767885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: 1
-  business: 1
+  environment: 0.52
+  business: 0.9
   guns: 1
+  race: 1
+  crime: 1
+  feminism: 1
+  domestic: 1
 --- !u!114 &32346031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +267,7 @@ MonoBehaviour:
   description: "The nation\u2019s insular capital, they all talk about the good old
     days but can\u2019t agree on when those were. There were plans for a border wall,
     but the lowest-bid contractors built it vertically instead of horizontally. "
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ede0c0dfbf7cab1489ea69187f210ac8, type: 3}
   sustain: 0.9
   alignment: {fileID: 32346030}
 --- !u!212 &32346032
@@ -427,9 +443,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edccbcba10509a48a106797cc767885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: -1
-  business: -1
-  guns: -1
+  environment: 0.56
+  business: 0.46
+  guns: 1
+  race: 0.64
+  crime: 0.44
+  feminism: 0.83
+  domestic: 0
 --- !u!114 &62543115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,9 +734,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edccbcba10509a48a106797cc767885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: -1
-  business: -1
+  environment: -0.62
+  business: -0.81
   guns: -1
+  race: -0.67
+  crime: -1
+  feminism: -0.66
+  domestic: 0
 --- !u!114 &554686207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,7 +935,7 @@ GameObject:
   - component: {fileID: 596970694}
   - component: {fileID: 596970695}
   m_Layer: 0
-  m_Name: DistrictCollection
+  m_Name: District collection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -994,8 +1018,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   environment: -1
-  business: -1
-  guns: -1
+  business: 0.37
+  guns: 0.05
+  race: -0.19
+  crime: -1
+  feminism: -0.13
+  domestic: -1
 --- !u!114 &721203926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,8 +1217,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   environment: -1
-  business: -1
-  guns: -1
+  business: -0.24
+  guns: -0.59
+  race: -0.35
+  crime: -0.86
+  feminism: -0.25
+  domestic: -0.73
 --- !u!114 &861797216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,6 +1425,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1982843197}
+  - {fileID: 14872956}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1605,6 +1638,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 102541876982474222, guid: 1a24b495960385d4cb351bd3a839b55c,
+        type: 2}
+      propertyPath: m_Text
+      value: '#Description'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a24b495960385d4cb351bd3a839b55c, type: 2}
   m_IsPrefabParent: 0
@@ -1651,9 +1689,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edccbcba10509a48a106797cc767885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: -1
-  business: -1
-  guns: -1
+  environment: 1
+  business: 1
+  guns: -0.21
+  race: 0
+  crime: 0.63
+  feminism: 0.44
+  domestic: 0.89
 --- !u!114 &1345226895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,6 +2040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28bd8d802998dc49b82c6bc5333a61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flag: {fileID: 14872954}
   details: {fileID: 1982843196}
 --- !u!1 &1848249481
 GameObject:
@@ -2009,7 +2052,7 @@ GameObject:
   - component: {fileID: 1848249483}
   - component: {fileID: 1848249482}
   m_Layer: 0
-  m_Name: PlayerCharacter
+  m_Name: Player character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,9 +2069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edccbcba10509a48a106797cc767885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: 1
-  business: 1
-  guns: 1
+  environment: 0
+  business: 0
+  guns: 0
+  race: 1
+  crime: 0
+  feminism: 0
+  domestic: 0
 --- !u!4 &1848249483
 Transform:
   m_ObjectHideFlags: 0
@@ -2083,7 +2130,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 1319468946}
   m_GameObject: {fileID: 1912435617}
-  m_Text: Description
+  m_Text: '#Description'
   m_OffsetZ: 0
   m_CharacterSize: 1.15
   m_LineSpacing: 0.55
@@ -2336,9 +2383,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edccbcba10509a48a106797cc767885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: 0
-  business: 0
-  guns: 0
+  environment: -0.73
+  business: -0.16
+  guns: -0.25
+  race: -0.79
+  crime: -0.64
+  feminism: -1
+  domestic: -0.63
 --- !u!60 &1996072712
 PolygonCollider2D:
   m_ObjectHideFlags: 0
