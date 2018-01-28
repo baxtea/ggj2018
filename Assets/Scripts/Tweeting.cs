@@ -32,10 +32,10 @@ public class Tweeting : MonoBehaviour
     {
 
         int r = Random.Range(0, options.tweets.Count);
-        Headline.GetComponentInChildren<SmartTextMesh>().UnwrappedText = options.tweets[r][0];
-        Headline.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
+        Headline.GetComponentInChildren<SmartTextMesh>().UnwrappedText = options.tweets[r][0];//sets headline text
+        Headline.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;//aligns text
         Instantiate(logo);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3);//Pause before showing options
         //UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         //System.Threading.Thread.Sleep(3000);//This will stop the program for 3 seconds, but it only puts the text onscreen after it returns the function and updates. Need to find solution
         Instantiate(write);
@@ -46,7 +46,7 @@ public class Tweeting : MonoBehaviour
         Choice2.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
         Choice3.GetComponentInChildren<SmartTextMesh>().UnwrappedText = options.tweets[r][3];
         Choice3.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
-        options.tweets.RemoveAt(r);
+        options.tweets.RemoveAt(r);//removes tweet so there are no repeats
         Debug.Log(options.tweets.Count);
         yield return null;
     }
