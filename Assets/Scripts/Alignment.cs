@@ -30,7 +30,8 @@ public class Alignment : MonoBehaviour {
 	static Alignment candidate;
 
 	void Awake() {
-		GameObject player = GameObject.Find("Player character");
+		GameObject player = GameObject.Find("Persistent");
+		DontDestroyOnLoad(player);
 		candidate = player.GetComponent<Alignment>();
 	}
 

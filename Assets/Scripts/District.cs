@@ -40,11 +40,6 @@ public class District : MonoBehaviour {
 	Texture2D distribution; // monochrome texture representing what percentage of people in a given area support you. try and black this out.
 
 
-	//
-	// what the player actually sees
-	//
-	Texture2D composite;
-
 	public void SetAlignTex(Texture2D texture) {
 		align_tex = texture;
 	}
@@ -56,38 +51,39 @@ public class District : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		distribution = GetComponentInParent<Transmission>().distribution;
-		enthusaism = GetComponentInParent<Transmission>().enthusaism;
+		Transmission transmission = GameObject.Find("Persistent").GetComponent<Transmission>();
+		distribution = transmission.distribution;
+		enthusaism = transmission.enthusaism;
 
-		//composite = new Texture2D(area.width, area.height);
+		if (NUM_DISTRICTS < 7) {
+			Color[] area_pix = area.GetPixels();
+			Color[] align_pix = align_tex.GetPixels();
 
-		Color[] area_pix = area.GetPixels();
-		Color[] align_pix = align_tex.GetPixels();
 
+			// districts never extend more than 400 pixels away from their capital
+			int dist = 400;
+			int x = (int)capital.texture_loc.x;
+			int y = (int)capital.texture_loc.y;
+			for (int r = Math.Max(y-dist, 0); r < area.height && r < y+dist; ++r) {
+				for (int c = Math.Max(x-dist, 0); c < area.width && c < x+dist; ++c) {
 
-		// districts never extend more than 400 pixels away from their capital
-		int dist = 400;
-		int x = (int)capital.texture_loc.x;
-		int y = (int)capital.texture_loc.y;
-		for (int r = Math.Max(y-dist, 0); r < area.height && r < y+dist; ++r) {
-			for (int c = Math.Max(x-dist, 0); c < area.width && c < x+dist; ++c) {
+					// alter the noise in the localized area to offset by how much the player agrees with local politics
+					float alpha = area_pix[r * area.width + c].a;
+					if (alpha > 0) {
+						float sample = align_pix[r * area.width + c].r; // noise as generated in Transmission.Awake
+						sample = alignment.AgreesWithPlayerFactor()*4/5 + sample/5;
 
-				// alter the noise in the localized area to offset by how much the player agrees with local politics
-				float alpha = area_pix[r * area.width + c].a;
-				if (alpha > 0) {
-					float sample = align_pix[r * area.width + c].r; // noise as generated in Transmission.Awake
-					sample = alignment.AgreesWithPlayerFactor()*4/5 + sample/5;
-
-					align_pix[r * area.width + c] = new Color(sample, sample, sample, alpha);
+						align_pix[r * area.width + c] = new Color(sample, sample, sample, alpha);
+					}
 				}
 			}
+			align_tex.SetPixels(align_pix);
+			align_tex.Apply();
 		}
-		align_tex.SetPixels(align_pix);
-		align_tex.Apply();
 
 		UpdateComposite();
 		NUM_DISTRICTS++;
-		if (NUM_DISTRICTS == 7) {
+		if (NUM_DISTRICTS % 7 == 0) {
 			GameObject.Find("Debug").GetComponent<SpriteRenderer>().sprite = Sprite.Create(align_tex, new Rect(0, 0, area.width, area.height), new Vector2(0.5f, 0.5f), 100.0f);
 		}
 	}
@@ -117,7 +113,6 @@ public class District : MonoBehaviour {
 		Tick(align_pix, dist_pix, enth_pix);
 
 		int dist = 400;
-		System.Random rand = new System.Random();
 		for (int r = Math.Max(y-dist, 0); r < area.height && r < y+dist; ++r) {
 			for (int c = Math.Max(x-dist, 0); c < area.width && c < x+dist; ++c) {
 				// send out a wave altering distribution as it relates to alignment
@@ -177,6 +172,7 @@ public class District : MonoBehaviour {
     {
         Debug.Log("Going to Tweets");
         yield return new WaitForSeconds(1);//Pause before showing options    
+		transform.parent.gameObject.SetActive(false);
         SceneManager.LoadScene("Tweeting");
         yield return null;
     }

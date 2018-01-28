@@ -939,7 +939,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 596970694}
-  - component: {fileID: 596970695}
   m_Layer: 0
   m_Name: District collection
   m_TagString: Untagged
@@ -970,19 +969,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &596970695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 596970693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a89dd603d05020428b8a533f915f44c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enthusaism: {fileID: 0}
-  distribution: {fileID: 0}
 --- !u!1 &721203923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,9 +2282,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1848249483}
+  - component: {fileID: 1848249484}
   - component: {fileID: 1848249482}
   m_Layer: 0
-  m_Name: Player character
+  m_Name: Persistent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2318,7 +2305,7 @@ MonoBehaviour:
   environment: 0
   business: 0
   guns: 0
-  race: 1
+  race: -1
   crime: 0
   feminism: 0
   domestic: 0
@@ -2335,6 +2322,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1848249484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848249481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a89dd603d05020428b8a533f915f44c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  align_tex: {fileID: 0}
+  enthusaism: {fileID: 0}
+  distribution: {fileID: 0}
 --- !u!1 &1848663503
 GameObject:
   m_ObjectHideFlags: 0
