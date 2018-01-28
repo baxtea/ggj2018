@@ -62,7 +62,7 @@ public class District : MonoBehaviour {
 				float alpha = area_pix[r * area.width + c].a;
 				if (alpha > 0) {
 					float sample = align_pix[r * area.width + c].r; // noise as generated in Transmission.Awake
-					sample = alignment.AgreesWithPlayerFactor()*5/6 + sample/6;
+					sample = alignment.AgreesWithPlayerFactor()*4/5 + sample/5;
 
 					align_pix[r * area.width + c] = new Color(sample, sample, sample, alpha);
 				}
