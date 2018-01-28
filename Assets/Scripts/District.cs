@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 // stores the initial data of the district as well as updating the preferences each tick
 // when ticks happen, is the sustain a gaussian falloff or just a district-wide event? probably district-wide
@@ -171,5 +172,13 @@ public class District : MonoBehaviour {
 
 	void OnMouseDown() {
 		Rally((int)capital.texture_loc.x, (int)capital.texture_loc.y);
-	}
+        StartCoroutine(ToTweet());
+    }
+    IEnumerator ToTweet()
+    {
+        Debug.Log("Going to Tweets");
+        yield return new WaitForSeconds(1);//Pause before showing options    
+        SceneManager.LoadScene("Tweeting");
+        yield return null;
+    }
 }
