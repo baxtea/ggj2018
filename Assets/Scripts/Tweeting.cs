@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class Tweeting : MonoBehaviour {
+
+public class Tweeting : MonoBehaviour
+{
     int total = 26;
     string firstname; //will be the name the player enters
-    Dictionary<int, List<string> > tweets = new Dictionary<int, List<string>> ();
-    public SmartTextMesh Headline;
-    public SmartTextMesh Choice1;
-    public SmartTextMesh Choice2;
-    public SmartTextMesh Choice3;
-    public Sprite logo;
-    public Sprite write;
+    Dictionary<int, List<string>> tweets = new Dictionary<int, List<string>>();
+    public GameObject Headline;
+    public GameObject Choice1;
+    public GameObject Choice2;
+    public GameObject Choice3;
+    public GameObject logo;
+    public GameObject write;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         List<string> tweet1 = new List<string>() { "Kale farms in Kalros have been ravaged by a flood.", "Kale is a vital plant for the balance of the ecosystem. We must work to create as many sustainable farms as possible to replace those lost", "What / Who cares ? Kale is stupid anyways!It tastes supper GROSS. #NoVeggies", "Kale production is the backbone of our farms. Get out people back to work! Fix those farms! #ExportEconomy" };
         tweets.Add(1, tweet1);
         List<string> tweet2 = new List<string>() { "1 in 5 people in Unidia don’t have health insurance ", "We must invest more in medical care for everyone so we can protect our citizens in the future #HealthCareReform", "But that means the other 4 have it? And I am one of those 4. The 20% can suck it. #TakeThatSickness", "People are responsible for their own health insurance. If they don’t have it, they are accepting the risk" };
@@ -34,7 +37,7 @@ public class Tweeting : MonoBehaviour {
         tweets.Add(8, tweet8);
         List<string> tweet9 = new List<string>() { "Multiple companies found using racially discriminating hiring practices, representatives considering repercussions", "Such practices go against our values, and our laws. We need to be more vigilant of such practices, and ensure equality for all not just in rhetoric, but in action!", "Makes sense. I did the same at my business. Learned from the best - my Dad! #HappyFathersDay #YouDidntKnow?", "While I do not endorse such policies and would never use them myself, it is not governments place to get involved running a company. #SeperationOfBizAndState" };
         tweets.Add(9, tweet9);
-        List<string> tweet10 = new List<string>() { "Approximately 9% of unidians are thought to be illegal immigrants", "These people are trying to escape terrible situations or trying to reach opportunities that are otherwise unattainable. We should do our best to aid them here, and aid other countries in making life better for their citizens. #GlobalCommunity", "Think I could get them to vote for me? Might be enough to win me the election. If I lose, we know why! #VoteFor"+firstname, "We cannot allow people to enter and stay in our country illegally. It takes jobs and resources away from our own citizens. We must send them back to wherever they came from and keep them out." };
+        List<string> tweet10 = new List<string>() { "Approximately 9% of unidians are thought to be illegal immigrants", "These people are trying to escape terrible situations or trying to reach opportunities that are otherwise unattainable. We should do our best to aid them here, and aid other countries in making life better for their citizens. #GlobalCommunity", "Think I could get them to vote for me? Might be enough to win me the election. If I lose, we know why! #VoteFor" + firstname, "We cannot allow people to enter and stay in our country illegally. It takes jobs and resources away from our own citizens. We must send them back to wherever they came from and keep them out." };
         tweets.Add(10, tweet10);
         List<string> tweet11 = new List<string>() { "Anti-abortion rally to be held in Pioucity", "I support allowing women to choose whether they want to carry a baby to term or not. It is not up to lawmakers to decide for them. #TheirChoiceNotOurs", "Damn! I’m holding a rally that day. Think I should reschedule? #SeeMeInstead", "People, institutions, businesses and provinces have their own morals and ideals. We should respect that and allow them to ban things they disagree with. #YouCanAlwaysMove" };
         tweets.Add(11, tweet11);
@@ -71,32 +74,43 @@ public class Tweeting : MonoBehaviour {
 
     }
 
-    Dictionary<int, List<string>> Event(Dictionary<int, List<string>> t)
+    IEnumerator Event()
     {
-        
-        int r = Random.Range(0, t.Count + 1);
-        Headline.UnwrappedText = t[r][0];
-        Headline.NeedsLayout = true;
-        Choice1.UnwrappedText = t[r][1];
-        Choice1.NeedsLayout = true;
-        Choice2.UnwrappedText = t[r][2];
-        Choice2.NeedsLayout = true;
-        Choice3.UnwrappedText = t[r][3];
-        Choice3.NeedsLayout = true;
-        t.Remove(r);
-        return t;
-    }
 
+        int r = Random.Range(0, tweets.Count + 1);
+        Headline.GetComponentInChildren<SmartTextMesh>().UnwrappedText = tweets[r][0];
+        Headline.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
+        Instantiate(logo);
+        yield return new WaitForSeconds(3);
+        //UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
+        //System.Threading.Thread.Sleep(3000);//This will stop the program for 3 seconds, but it only puts the text onscreen after it returns the function and updates. Need to find solution
+        Instantiate(write);
+        Destroy(logo.gameObject);
+        Choice1.GetComponentInChildren<SmartTextMesh>().UnwrappedText = tweets[r][1];
+        Choice1.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
+        Choice2.GetComponentInChildren<SmartTextMesh>().UnwrappedText = tweets[r][2];
+        Choice2.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
+        Choice3.GetComponentInChildren<SmartTextMesh>().UnwrappedText = tweets[r][3];
+        Choice3.GetComponentInChildren<SmartTextMesh>().NeedsLayout = true;
+        tweets.Remove(r);
+        yield return null;
+    }
+    public IEnumerator Wait(float delayInSecs)
+    {
+        yield return new WaitForSeconds(delayInSecs);
+    }
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (Input.GetKeyDown("space"))
         {
-            tweets = Event(tweets);
+            StartCoroutine(Event());
+
+
+
+
+
         }
 
-
-
-
     }
-    
 }
